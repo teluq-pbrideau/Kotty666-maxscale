@@ -50,9 +50,6 @@ ssl_ca_cert=<%= $ssl_ca_cert %> # Deprecated since Mariadb MaxScale 22.08.  See 
 <%- if $ssl_ca { -%>
 ssl_ca=<%= $ssl_ca %>
 <%- } -%>
-<%- if $ssl_ca { -%>
-ssl_ca=<%= $ssl_ca %>
-<%- } -%>
 <%- if $ssl_version != [] { -%>
 ssl_version=<%= $ssl_version.join(',') %>
 <%- } -%>
