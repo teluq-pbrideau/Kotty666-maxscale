@@ -37,7 +37,7 @@ port=<%= $port %>
 <%- if $socket { -%>
 socket=<%= $socket %>
 <%- } -%>
-<%- if $sauthenticator { -%>
+<%- if $authenticator { -%>
 authenticator=<%= $authenticator %>
 <%- } -%>
 <%- if $authenticator_options { -%>
