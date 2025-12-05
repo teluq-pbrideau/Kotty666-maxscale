@@ -8,6 +8,8 @@
 # @param address
 # @param port
 # @param socket
+# @param authenticator
+# @param authenticator_options
 # @param ssl
 # @param ssl_key
 # @param ssl_cert
@@ -28,6 +30,8 @@ define maxscale::config::listener (
   Optional[Stdlib::Ip::Address]     $address                     = undef,
   Optional[Stdlib::Port]            $port                        = undef,
   Optional[Stdlib::UnixPath]        $socket                      = undef,
+  Optional[String]                  $authenticator               = undef,
+  Optional[String]                  $authenticator_options       = undef,
   Optional[Boolean]                 $ssl                         = undef,
   Optional[Stdlib::UnixPath]        $ssl_key                     = undef,
   Optional[Stdlib::UnixPath]        $ssl_cert                    = undef,
@@ -46,6 +50,8 @@ define maxscale::config::listener (
         address                     => $address,
         port                        => $port,
         socket                      => $socket,
+        authenticator               => $authenticator,
+        authenticator_options       => $authenticator_options,
         ssl                         => $ssl,
         ssl_key                     => $ssl_key,
         ssl_cert                    => $ssl_cert,

@@ -5,6 +5,8 @@
   Optional[Stdlib::Ip::Address]     $address                     = undef,
   Optional[Stdlib::Port]            $port                        = undef,
   Optional[Stdlib::UnixPath]        $socket                      = undef,
+  Optional[String]                  $authenticator               = undef,
+  Optional[String]                  $authenticator_options       = undef,
   Optional[Boolean]                 $ssl                         = undef,
   Optional[Stdlib::UnixPath]        $ssl_key                     = undef,
   Optional[Stdlib::UnixPath]        $ssl_cert                    = undef,
@@ -34,6 +36,12 @@ port=<%= $port %>
 <%- } -%>
 <%- if $socket { -%>
 socket=<%= $socket %>
+<%- } -%>
+<%- if $sauthenticator { -%>
+authenticator=<%= $authenticator %>
+<%- } -%>
+<%- if $authenticator_options { -%>
+authenticator_options=<%= $authenticator_options %>
 <%- } -%>
 <%- if $ssl != undef {-%>
 ssl=<%= $ssl %>
