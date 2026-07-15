@@ -41,10 +41,11 @@ class maxscale::config(
   }
 
   concat { $configfile:
-    owner => 'root',
-    group => 'root',
-    mode  => '0644',
-    path  => "${configdir}/${configfile}",
+    owner        => 'root',
+    group        => 'root',
+    mode         => '0644',
+    path         => "${configdir}/${configfile}",
+    validate_cmd => 'runuser -u maxscale -- maxscale --config % --config-check',
   }
   concat::fragment { 'Config Header':
     target  => $configfile,
